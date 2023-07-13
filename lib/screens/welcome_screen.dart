@@ -22,10 +22,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       debugShowCheckedModeBanner: false,
       title: kAppBarTitleShort,
       home: Scaffold(
-        backgroundColor: const Color(kDarkestBlue),
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           // leading: const Icon(Icons.arrow_back),
-          backgroundColor: const Color(kDarkestBlue),
+          backgroundColor: Colors.transparent,
           title: const FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
@@ -51,79 +52,93 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
           ],
         ),
-        body: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: menuData.length,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () {
-                switch (index) {
-                  case 0:
-                    {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RadicalScreen(),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/CareerBackgroundManWithStairs.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 200.0, 8.0, 25.0),
+            child: ListView.separated(
+              padding: const EdgeInsets.all(8),
+              itemCount: menuData.length,
+              itemBuilder: (BuildContext context, int index) {
+                return InkWell(
+                  onTap: () {
+                    switch (index) {
+                      case 0:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RadicalScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 1:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CareerScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 2:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const TransitionScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 3:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ServicesScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      default:
+                        {
+                          print('Default');
+                        }
+                        break;
+                    } //switch
+                    print('This is the index: $index');
+                  },
+                  child: Container(
+                    decoration: styleBoxDecoration,
+                    height: 90,
+                    // color: Colors.white,
+                    // color: Colors.amber[colorCodes[index]],
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          menuData[index],
+                          style: const TextStyle(
+                              color: Color(kFontColor), fontFamily: kFontTypeForApp, fontSize: kContainerFontHeight, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.left,
                         ),
-                      );
-                    }
-                    break;
-                  case 1:
-                    {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) => const CareerScreen(),
-                    ),
-                    }
-                    break;
-                  case 2:
-                    {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) => const TransitionScreen(),
-                    ),
-                    }
-                    break;
-                  case 3:
-                    {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) => const ServicesScreen(),
-                    ),
-                    }
-                    break;
-                  default:
-                    {
-                      print('Default');
-                    }
-                    break;
-                } //switch
-                print('This is the index: $index');
-              },
-              child: Container(
-                decoration: styleBoxDecoration,
-                height: 90,
-                // color: Colors.white,
-                // color: Colors.amber[colorCodes[index]],
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      menuData[index],
-                      style:
-                          const TextStyle(color: Color(kFontColor), fontFamily: kFontTypeForApp, fontSize: kContainerFontHeight, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.left,
+                      ),
                     ),
                   ),
-                ),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) => const Divider(
+                height: 25.0,
               ),
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) => const Divider(
-            height: 25.0,
+            ),
           ),
         ),
       ),

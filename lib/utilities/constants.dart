@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // Colors https://colorhunt.co/palette/002b5b2b4865256d858fe3cf
 const int kDarkestBlue = 0xFF002B5B;
 const int kDarkBlue = 0xFF2B4865;
@@ -16,10 +17,11 @@ const String kAppBarTitle = 'Radical Career Transition Services';
 const String kAppBarTitleShort = 'RCTS';
 
 //Font
-const String kFontTypeForApp = 'YsabeauInfant-Thin.ttf';
-const int kFontColor = kLightBlue;
+const String kFontTypeForApp = 'Poppins-Bold.ttf';
+const int kFontColor = kDarkestBlue;
+const int kTitleFontColor = kLightBlue;
 const double kAppBarFontHeight = 20.0;
-const double kContainerFontHeight= 20.0;
+const double kContainerFontHeight = 40.0;
 //Image
 const double logoHeightValue = 200.0;
 const double logoWidthValue = 300.0;

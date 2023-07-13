@@ -18,16 +18,17 @@ class _RadicalScreenState extends State<RadicalScreen> {
       debugShowCheckedModeBanner: false,
       title: kAppBarTitleShort,
       home: Scaffold(
-        backgroundColor: const Color(kDarkestBlue),
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           leading: BackButton(
             onPressed: () => Navigator.of(context).pop(),
           ),
-          backgroundColor: const Color(kDarkestBlue),
+          backgroundColor: Colors.transparent,
           title: const FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              'About',
+              'Radical',
               style: TextStyle(
                 fontFamily: kFontTypeForApp,
                 color: Color(kFontColor),
@@ -52,7 +53,7 @@ class _RadicalScreenState extends State<RadicalScreen> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/OceanBackgroundWithOutBackgroundImage.png'),
+              image: AssetImage('images/CareerBackgroundManWithStairs.png'),
               fit: BoxFit.cover,
             ),
           ),

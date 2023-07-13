@@ -52,7 +52,7 @@ class _InformationOneScreenState extends State<InformationOneScreen> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/OceanBackgroundWithOutBackgroundImage.png'),
+              image: AssetImage('images/CareerBackgroundManWithStairs.png'),
               fit: BoxFit.cover,
             ),
           ),

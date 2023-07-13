@@ -18,9 +18,13 @@ class _AboutScreenState extends State<AboutScreen> {
       debugShowCheckedModeBanner: false,
       title: kAppBarTitleShort,
       home: Scaffold(
-        backgroundColor: const Color(kDarkestBlue),
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: const Color(kDarkestBlue),
+          leading: BackButton(
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          backgroundColor: Colors.transparent,
           title: const FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
@@ -49,7 +53,7 @@ class _AboutScreenState extends State<AboutScreen> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/OceanBackgroundWithOutBackgroundImage.png'),
+              image: AssetImage('images/CareerBackgroundManWithStairs.png'),
               fit: BoxFit.cover,
             ),
           ),
