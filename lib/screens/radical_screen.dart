@@ -21,7 +21,13 @@ class _RadicalScreenState extends State<RadicalScreen> {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          leading: BackButton(
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_circle_left_outlined,
+              color: Color(kLightBlue),
+            ),
+            iconSize: 40.0,
             onPressed: () => Navigator.of(context).pop(),
           ),
           backgroundColor: Colors.transparent,
@@ -31,7 +37,7 @@ class _RadicalScreenState extends State<RadicalScreen> {
               'Radical',
               style: TextStyle(
                 fontFamily: kFontTypeForApp,
-                color: Color(kFontColor),
+                color: Color(kLightBlue),
                 fontSize: kAppBarFontHeight,
                 fontWeight: FontWeight.bold,
                 overflow: TextOverflow.ellipsis,
@@ -42,7 +48,7 @@ class _RadicalScreenState extends State<RadicalScreen> {
             IconButton(
               icon: const Icon(
                 Icons.settings,
-                color: Colors.white,
+                color: Color(kLightBlue),
               ),
               onPressed: () {
                 Navigator.pushNamed(context, SettingsScreen.id);
@@ -53,7 +59,7 @@ class _RadicalScreenState extends State<RadicalScreen> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/CareerBackgroundManWithStairs.png'),
+              image: AssetImage('images/CareerBackgroundManWithStairsFaded40Percent.png'),
               fit: BoxFit.cover,
             ),
           ),

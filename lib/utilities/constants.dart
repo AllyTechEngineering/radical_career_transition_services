@@ -13,11 +13,11 @@ const int kMedBlueGreen = 0xFF159895;
 const int kLightBlueGreen = 0xFF57C5B6;
 
 // Strings
-const String kAppBarTitle = 'Radical Career Transition Services';
+const String kAppBarTitle = 'Radical Career Services';
 const String kAppBarTitleShort = 'RCTS';
 
 //Font
-const String kFontTypeForApp = 'Poppins-Bold.ttf';
+const String kFontTypeForApp = 'YsabeauInfant-ExtraBold.ttf';
 const int kFontColor = kDarkestBlue;
 const int kTitleFontColor = kLightBlue;
 const double kAppBarFontHeight = 20.0;
@@ -29,7 +29,7 @@ const double logoWidthValue = 300.0;
 //Widgets
 const BoxDecoration styleBoxDecoration = (BoxDecoration(
   gradient: LinearGradient(
-    colors: [Color(kDarkestBlue), Color(kMediumBlue)],
+    colors: [Color(kDarkestBlue), Color(kLightBlue)],
   ),
   boxShadow: [
     BoxShadow(
@@ -47,3 +47,20 @@ const BoxDecoration styleBoxDecoration = (BoxDecoration(
     bottomLeft: Radius.circular(20.0),
   ),
 ));
+
+//Buttons
+const double kButtonRadiusValue = 12.0;
+final ButtonStyle kStyleElevatedButton = ElevatedButton.styleFrom(
+  side: const BorderSide(width: 2, color: Color(kLightBlue), style: BorderStyle.solid),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(kButtonRadiusValue),
+  ),
+  backgroundColor: const Color(kDarkBlue),
+  padding: const EdgeInsets.only(left: 6.0, right: 6.0, top: 0.0, bottom: 0.0),
+  elevation: 25.0,
+  shadowColor: const Color(kLightBlue),
+  textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: kFontTypeForApp, color: Color(kDarkBlue)),
+);
+//URL
+String kRctsUrl = 'https://www.radicaltransition.com/contact';
+String kRctsLinkedInUrl = 'https://www.linkedin.com/company/radicaltransition/';

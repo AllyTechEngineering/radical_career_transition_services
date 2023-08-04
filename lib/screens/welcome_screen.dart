@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:radical_career_transition_services/models/menu.dart';
+import 'package:radical_career_transition_services/screens/analyze_screen.dart';
+import 'package:radical_career_transition_services/screens/assess_screen.dart';
 import 'package:radical_career_transition_services/screens/career_screen.dart';
+import 'package:radical_career_transition_services/screens/connect_screen.dart';
+import 'package:radical_career_transition_services/screens/contact_screen.dart';
+import 'package:radical_career_transition_services/screens/define_screen.dart';
+import 'package:radical_career_transition_services/screens/initiate_screen.dart';
+import 'package:radical_career_transition_services/screens/launch_screen.dart';
 import 'package:radical_career_transition_services/screens/radical_screen.dart';
+import 'package:radical_career_transition_services/screens/research_screen.dart';
 import 'package:radical_career_transition_services/screens/services_screen.dart';
 import 'package:radical_career_transition_services/screens/settings_screen.dart';
 import 'package:radical_career_transition_services/screens/transition_screen.dart';
@@ -25,15 +33,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          // leading: const Icon(Icons.arrow_back),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_circle_left_outlined,
+              color: Color(kLightBlue),
+            ),
+            iconSize: 40.0,
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           backgroundColor: Colors.transparent,
           title: const FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              'Welcome',
+              'Radical Career Services',
               style: TextStyle(
                 fontFamily: kFontTypeForApp,
-                color: Color(kFontColor),
+                color: Color(kLightBlue),
                 fontSize: kAppBarFontHeight,
                 fontWeight: FontWeight.bold,
                 overflow: TextOverflow.ellipsis,
@@ -44,7 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             IconButton(
               icon: const Icon(
                 Icons.settings,
-                color: Colors.tealAccent,
+                color: Color(kLightBlue),
               ),
               onPressed: () {
                 Navigator.pushNamed(context, SettingsScreen.id);
@@ -60,9 +76,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 200.0, 8.0, 25.0),
+            padding: const EdgeInsets.fromLTRB(8.0, 50.0, 8.0, 25.0),
             child: ListView.separated(
-              padding: const EdgeInsets.all(8),
+              // padding: const EdgeInsets.all(8),
               itemCount: menuData.length,
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
@@ -73,7 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const RadicalScreen(),
+                              builder: (context) => const ResearchScreen(),
                             ),
                           );
                         }
@@ -83,7 +99,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const CareerScreen(),
+                              builder: (context) => const AssessScreen(),
                             ),
                           );
                         }
@@ -93,7 +109,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TransitionScreen(),
+                              builder: (context) => const DefineScreen(),
                             ),
                           );
                         }
@@ -103,7 +119,47 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ServicesScreen(),
+                              builder: (context) => const InitiateScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 4:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ConnectScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 5:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AnalyzeScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 6:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LaunchScreen(),
+                            ),
+                          );
+                        }
+                        break;
+                      case 7:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ContactScreen(),
                             ),
                           );
                         }
@@ -114,22 +170,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         }
                         break;
                     } //switch
-                    print('This is the index: $index');
                   },
                   child: Container(
                     decoration: styleBoxDecoration,
-                    height: 90,
-                    // color: Colors.white,
-                    // color: Colors.amber[colorCodes[index]],
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          menuData[index],
-                          style: const TextStyle(
-                              color: Color(kFontColor), fontFamily: kFontTypeForApp, fontSize: kContainerFontHeight, fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.left,
-                        ),
+                    height: 65.0,
+                    width: 20.0,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20.0, 15.0, 8.0, 1.0),
+                      child: Text(
+                        menuData[index],
+                        style: const TextStyle(color: Colors.white, fontFamily: kFontTypeForApp, fontSize: 20.0, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left,
                       ),
                     ),
                   ),

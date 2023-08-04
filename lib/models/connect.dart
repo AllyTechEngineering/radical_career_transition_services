@@ -1,5 +1,4 @@
-const String menuText = 'tbd';
-List<String> menuData = [
+List<String> connectData = [
   'Research the Market',
   'Assess your Position',
   'Define your Approach',
